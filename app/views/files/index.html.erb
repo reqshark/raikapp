@@ -1,0 +1,13 @@
+<h1>Files</h1>
+<ul>
+	<% @files.each do |file| %>
+	<li><%= link_to file, "/files/#{file}" %></li>
+	<% end %>
+</ul>
+
+<h2>Upload a file</h2>
+	<%= form_tag files_path, :multipart => true do %>
+		<%= file_field_tag :file %>
+		<%= submit_tag "Upload" %>
+	<% end %>
+	
